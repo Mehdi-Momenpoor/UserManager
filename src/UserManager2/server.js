@@ -9,8 +9,8 @@ export function getUsers(keyword) {
         }, 1000);
     })
 }
-export function deleteUser() {
+export function deleteUser(id) {
     return new Promise(resolve => {
-        resolve()
+        resolve(id)
     })
 }
