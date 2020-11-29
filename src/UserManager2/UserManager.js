@@ -4,8 +4,7 @@ import { deleteUser, getUsers } from './server';
 import { Button, Header } from './UserDetail';
 import UserList from './UserList';
 
-
-export default function UserManager() {
+export default function UserManager({ onAdd, onEdit }) {
 
     const [users, setUsers] = useState([]);
     const [value, setValue] = useState('');
@@ -17,7 +16,6 @@ export default function UserManager() {
     async function handleSearch() {
         const users = await getUsers(value);
         setUsers(users);
-        console.log('Search');
     }
 
     async function handleDelete(id) {
@@ -25,10 +23,10 @@ export default function UserManager() {
         await deleteUser(id);
         handleSearch();
     }
- 
+
     return (
         <>
-            <Header>Users</Header>
+            <Header>User Manager</Header>
             <SearchPanel
                 keyword={value}
                 onKeywordChange={handleKeywordChange}
@@ -37,10 +35,9 @@ export default function UserManager() {
             <UserList
                 users={users}
                 onDelete={handleDelete}
+                onEdit={onEdit}
             />
-            <Button>Add</Button>
+            <Button onClick={onAdd}>Add</Button>
         </>
     )
 }
-
-

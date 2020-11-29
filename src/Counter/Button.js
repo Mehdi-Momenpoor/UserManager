@@ -10,6 +10,7 @@ export default function Button({ children, onInc, onDec, onDel, onReset, onRefre
         <>
             <button
                 onClick={onInc || onDec || onDel || onReset || onRefresh}
+                
                 disabled={disable}>
                 {children}
             </button>

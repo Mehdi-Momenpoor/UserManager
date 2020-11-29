@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Button, Input } from './UserDetail';
 
 export const Wrapper = styled.div``;
 
 export default function SearchPanel({ onSearch, keyword, onKeywordChange }) {
+
+
 
     return (
         <Wrapper>
@@ -13,4 +15,3 @@ export default function SearchPanel({ onSearch, keyword, onKeywordChange }) {
         </Wrapper>
     )
 }
- 

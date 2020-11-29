@@ -1,12 +1,10 @@
 import React from 'react'
-import UserDetail from './UserDetail'
-import UserManager from './UserManager'
+import Router from './Router'
 
 export default function App() {
     return (
         <div>
-            <UserManager />
-            {/* <UserDetail /> */}
+            <Router />
         </div>
     )
 }
